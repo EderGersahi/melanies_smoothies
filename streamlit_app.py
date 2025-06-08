@@ -4,7 +4,7 @@ import streamlit as st
 from snowflake.snowpark.functions import col, when_matched
 
 cnx=st.connection("snowflake")
-session=cnx.session(
+session=cnx.session()
 
 
 
