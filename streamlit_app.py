@@ -51,16 +51,17 @@ if ingredients_list:
     ingredients_string = ''
 
   for fruit_chosen in ingredients_list:
-      ingredients_string += fruit_chosen + ''
+    
+    ingredients_string += fruit_chosen + ''
   
       # Extraer valor de búsqueda
-      search_on_series = pd_df.loc[pd_df['FRUIT_NAME'] == fruit_chosen, 'SEARCH_ON']
+    search_on_series = pd_df.loc[pd_df['FRUIT_NAME'] == fruit_chosen, 'SEARCH_ON']
   
-      if not search_on_series.empty and pd.notna(search_on_series.iloc[0]):
-          search_on = search_on_series.iloc[0]
-          st.subheader(fruit_chosen + ' Nutrition Information')
-          smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + search_on)
-          st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
+    if not search_on_series.empty and pd.notna(search_on_series.iloc[0]):
+      search_on = search_on_series.iloc[0]
+      st.subheader(fruit_chosen + ' Nutrition Information')
+      smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + search_on)
+      st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
 
 
     #st.write(ingredients_string)
