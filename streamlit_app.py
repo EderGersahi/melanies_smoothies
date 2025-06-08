@@ -24,7 +24,7 @@ st.write(
 
 #st.write("Your favorite fruit is:", option)
 
-import streamlit as st
+
 
 name_on_order = st.text_input("Name on Smoothie")
 st.write("The name on your Smoothie will be:", name_on_order)
